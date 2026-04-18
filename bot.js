@@ -8,7 +8,7 @@ function startBot() {
   });
 
   bot.on('spawn', () => {
-    console.log('Bot conectado');
+    console.log('Conectado');
 
     setInterval(() => {
       bot.setControlState('jump', true);
@@ -16,14 +16,14 @@ function startBot() {
     }, 30000);
   });
 
-  bot.on('end', () => {
-    console.log('Reconectando...');
-    setTimeout(startBot, 10000);
-  });
-
   bot.on('error', (err) => {
     console.log('Error:', err.message);
   });
+
+  bot.on('end', () => {
+    console.log('Desconectado, reintentando...');
+    setTimeout(startBot, 15000);
+  });
 }
 
-startBot();
+setTimeout(startBot, 15000);
