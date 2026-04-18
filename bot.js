@@ -33,5 +33,11 @@ function createBot() {
     console.log('Error:', err);
   });
 }
+const http = require('http');
+
+http.createServer((req, res) => {
+  res.write("Bot activo");
+  res.end();
+}).listen(3000);
 
 createBot();
