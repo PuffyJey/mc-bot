@@ -19,7 +19,7 @@ function startBot() {
 
   bot.on('end', () => {
     console.log('Reconectando...');
-    setTimeout(startBot, 10000);
+    setTimeout(startBot, 20000);
   });
 
   bot.on('error', (err) => {
