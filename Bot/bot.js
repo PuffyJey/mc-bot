@@ -11,11 +11,17 @@ function createBot() {
     console.log('Bot conectado');
 
     // Movimiento para evitar AFK
-    setInterval(() => {
-      bot.setControlState('jump', true);
-      setTimeout(() => bot.setControlState('jump', false), 500);
-    }, 30000);
-  });
+  setInterval(() => {
+    const actions = ['forward', 'back', 'left', 'right'];
+  
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    bot.setControlState(action, true);
+  
+    setTimeout(() => {
+      bot.setControlState(action, false);
+    }, 2000);
+  
+  }, 20000);
 
   bot.on('end', () => {
     console.log('Reconectando...');
