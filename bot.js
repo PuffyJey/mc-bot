@@ -5,6 +5,7 @@ function startBot() {
     host: 'gentlesmp.aternos.me',
     port: 13163,
     username: 'AFK_Bot'
+    version: '1.20.4',
   });
 
   bot.on('spawn', () => {
