@@ -3,8 +3,8 @@ const mineflayer = require('mineflayer');
 function createBot() {
   const bot = mineflayer.createBot({
     host: 'gentlesmp.aternos.me', // CAMBIA ESTO
-    port: 25565,
-    username: 'Bot24_7'
+    port: 13163,
+    username: '.1'
   });
 
   bot.on('spawn', () => {
